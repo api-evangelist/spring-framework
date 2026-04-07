@@ -1,84 +1,94 @@
 name: Spring Framework
-description: The Spring Framework provides a comprehensive programming and configuration model for modern Java-based enterprise applications
+description: >-
+  The Spring Framework provides a comprehensive programming and configuration model
+  for modern Java-based enterprise applications.
 image: https://spring.io/img/spring-logo.svg
 url: https://spring.io/projects/spring-framework
 created: '2024'
 modified: '2026-03-16'
 tags:
-- Java
-- Framework
-- Enterprise
-- Dependency Injection
-- IoC
-- MVC
-- Spring Boot
-- Microservices
+  - Java
+  - Framework
+  - Enterprise
+  - Dependency Injection
+  - IoC
+  - MVC
+  - Spring Boot
+  - Microservices
 apis:
-- name: Spring Framework Documentation API
-  description: Official Spring Framework documentation and API reference
-  image: https://spring.io/img/spring-logo.svg
-  humanURL: https://docs.spring.io/spring-framework/docs/current/reference/html/
-  baseURL: https://docs.spring.io/spring-framework/docs/current/
-  tags:
-  - Documentation
-  - Reference
-  - Guides
-  properties:
-  - type: x-documentation
-    url: https://docs.spring.io/spring-framework/docs/current/reference/html/
-  - type: x-javadoc
-    url: https://docs.spring.io/spring-framework/docs/current/javadoc-api/
-  - type: x-github
-    url: https://github.com/spring-projects/spring-framework
-- name: Spring Initializr API
-  description: API for generating Spring Boot projects with customizable dependencies and configurations
-  image: https://spring.io/img/spring-logo.svg
-  humanURL: https://start.spring.io
-  baseURL: https://start.spring.io/
-  tags:
-  - Project Generation
-  - Bootstrap
-  - Configuration
-  properties:
-  - type: x-api-endpoint
-    url: https://start.spring.io/
-  - type: x-documentation
-    url: https://github.com/spring-io/start.spring.io
-  - type: x-openapi
-    url: https://start.spring.io/v2-schema.json
-- name: Spring Boot Actuator API
-  description: Production-ready features for monitoring and managing Spring Boot applications
-  image: https://spring.io/img/spring-logo.svg
-  humanURL: https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html
-  baseURL: http://localhost:8080/actuator
-  tags:
-  - Monitoring
-  - Health
-  - Metrics
-  - Management
-  properties:
-  - type: x-documentation
-    url: https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html
-  - type: x-endpoints
-    url: https://docs.spring.io/spring-boot/docs/current/actuator-api/htmlsingle/
+  - name: Spring Framework Documentation API
+    description: >-
+      Official Spring Framework documentation and API reference.
+    image: https://spring.io/img/spring-logo.svg
+    humanURL: 
+      https://docs.spring.io/spring-framework/docs/current/reference/html/
+    baseURL: https://docs.spring.io/spring-framework/docs/current/
+    tags:
+      - Documentation
+      - Reference
+      - Guides
+    properties:
+      - type: x-documentation
+        url: 
+          https://docs.spring.io/spring-framework/docs/current/reference/html/
+      - type: x-javadoc
+        url: https://docs.spring.io/spring-framework/docs/current/javadoc-api/
+      - type: x-github
+        url: https://github.com/spring-projects/spring-framework
+  - name: Spring Initializr API
+    description: >-
+      API for generating Spring Boot projects with customizable dependencies and configurations.
+    image: https://spring.io/img/spring-logo.svg
+    humanURL: https://start.spring.io
+    baseURL: https://start.spring.io/
+    tags:
+      - Project Generation
+      - Bootstrap
+      - Configuration
+    properties:
+      - type: x-api-endpoint
+        url: https://start.spring.io/
+      - type: x-documentation
+        url: https://github.com/spring-io/start.spring.io
+      - type: x-openapi
+        url: https://start.spring.io/v2-schema.json
+  - name: Spring Boot Actuator API
+    description: >-
+      Production-ready features for monitoring and managing Spring Boot applications.
+    image: https://spring.io/img/spring-logo.svg
+    humanURL: 
+      https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html
+    baseURL: http://localhost:8080/actuator
+    tags:
+      - Monitoring
+      - Health
+      - Metrics
+      - Management
+    properties:
+      - type: x-documentation
+        url: 
+          https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html
+      - type: x-endpoints
+        url: 
+          https://docs.spring.io/spring-boot/docs/current/actuator-api/htmlsingle/
 maintainers:
-- name: VMware (Broadcom)
-  email: spring-projects@vmware.com
-  url: https://spring.io/team
+  - name: VMware (Broadcom)
+    email: spring-projects@vmware.com
+    url: https://spring.io/team
 common:
-- type: x-website
-  url: https://spring.io
-- type: x-github-org
-  url: https://github.com/spring-projects
-- type: x-blog
-  url: https://spring.io/blog
-- type: x-guides
-  url: https://spring.io/guides
-- type: x-quickstart
-  url: https://spring.io/quickstart
-- type: x-stack-overflow
-  url: https://stackoverflow.com/questions/tagged/spring
-- type: x-twitter
-  url: https://twitter.com/springcentral
-- type: x-youtube
-  url: https://www.youtube.com/user/SpringSourceDev
+  - type: x-website
+    url: https://spring.io
+  - type: x-github-org
+    url: https://github.com/spring-projects
+  - type: x-blog
+    url: https://spring.io/blog
+  - type: x-guides
+    url: https://spring.io/guides
+  - type: x-quickstart
+    url: https://spring.io/quickstart
+  - type: x-stack-overflow
+    url: https://stackoverflow.com/questions/tagged/spring
+  - type: x-twitter
+    url: https://twitter.com/springcentral
+  - type: x-youtube
+    url: https://www.youtube.com/user/SpringSourceDev
