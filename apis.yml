@@ -7,30 +7,28 @@ url: https://spring.io/projects/spring-framework
 created: '2024'
 modified: '2026-03-16'
 tags:
-  - Java
-  - Framework
-  - Enterprise
   - Dependency Injection
+  - Enterprise
+  - Framework
   - IoC
+  - Java
+  - Microservices
   - MVC
   - Spring Boot
-  - Microservices
 apis:
   - name: Spring Framework Documentation API
     description: >-
       Official Spring Framework documentation and API reference.
     image: https://spring.io/img/spring-logo.svg
-    humanURL: 
-      https://docs.spring.io/spring-framework/docs/current/reference/html/
+    humanURL: https://docs.spring.io/spring-framework/docs/current/reference/html/
     baseURL: https://docs.spring.io/spring-framework/docs/current/
     tags:
       - Documentation
-      - Reference
       - Guides
+      - Reference
     properties:
       - type: x-documentation
-        url: 
-          https://docs.spring.io/spring-framework/docs/current/reference/html/
+        url: https://docs.spring.io/spring-framework/docs/current/reference/html/
       - type: x-javadoc
         url: https://docs.spring.io/spring-framework/docs/current/javadoc-api/
       - type: x-github
@@ -42,9 +40,9 @@ apis:
     humanURL: https://start.spring.io
     baseURL: https://start.spring.io/
     tags:
-      - Project Generation
       - Bootstrap
       - Configuration
+      - Project Generation
     properties:
       - type: x-api-endpoint
         url: https://start.spring.io/
@@ -56,21 +54,18 @@ apis:
     description: >-
       Production-ready features for monitoring and managing Spring Boot applications.
     image: https://spring.io/img/spring-logo.svg
-    humanURL: 
-      https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html
+    humanURL: https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html
     baseURL: http://localhost:8080/actuator
     tags:
-      - Monitoring
       - Health
-      - Metrics
       - Management
+      - Metrics
+      - Monitoring
     properties:
       - type: x-documentation
-        url: 
-          https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html
+        url: https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html
       - type: x-endpoints
-        url: 
-          https://docs.spring.io/spring-boot/docs/current/actuator-api/htmlsingle/
+        url: https://docs.spring.io/spring-boot/docs/current/actuator-api/htmlsingle/
 maintainers:
   - name: VMware (Broadcom)
     email: spring-projects@vmware.com
