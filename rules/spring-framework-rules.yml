@@ -1,0 +1,56 @@
+extends: spectral:oas
+rules:
+  spring-framework-operation-id-required:
+    description: All operations must have a unique operationId
+    message: "Operation is missing operationId at {{path}}"
+    severity: error
+    given: "$.paths[*][get,post,put,patch,delete]"
+    then:
+      field: operationId
+      function: truthy
+
+  spring-framework-tags-required:
+    description: All operations must have tags
+    message: "Operation at {{path}} is missing tags"
+    severity: warn
+    given: "$.paths[*][get,post,put,patch,delete]"
+    then:
+      field: tags
+      function: truthy
+
+  spring-framework-summary-title-case:
+    description: Operation summaries must use Title Case
+    message: "Summary '{{value}}' should begin with an uppercase letter"
+    severity: warn
+    given: "$.paths[*][*].summary"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[A-Z]"
+
+  spring-framework-api-versioning:
+    description: Servers should define a base URL
+    message: "API should define at least one server"
+    severity: warn
+    given: "$"
+    then:
+      field: servers
+      function: truthy
+
+  spring-framework-response-200:
+    description: GET operations should have a 200 response
+    message: "GET operation at {{path}} is missing a 200 response"
+    severity: error
+    given: "$.paths[*].get"
+    then:
+      field: "responses.200"
+      function: truthy
+
+  spring-framework-no-empty-descriptions:
+    description: Operations and parameters should have descriptions
+    message: "Description is required at {{path}}"
+    severity: info
+    given: "$.paths[*][*]"
+    then:
+      field: description
+      function: truthy

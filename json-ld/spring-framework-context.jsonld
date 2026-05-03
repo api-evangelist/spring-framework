@@ -1,0 +1,46 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "spring": "https://spring.io/vocab/",
+    "springfw": "https://spring.io/projects/spring-framework/vocab/",
+
+    "name": "schema:name",
+    "description": "schema:description",
+    "url": "schema:url",
+    "version": "schema:version",
+
+    "ApplicationContext": {
+      "@id": "springfw:ApplicationContext",
+      "@type": "@id"
+    },
+    "BeanDefinition": {
+      "@id": "springfw:BeanDefinition",
+      "@type": "@id"
+    },
+    "SpringBootProject": {
+      "@id": "springfw:SpringBootProject",
+      "@type": "@id"
+    },
+
+    "beanName": { "@id": "springfw:beanName" },
+    "scope": { "@id": "springfw:scope" },
+    "dependencies": { "@id": "springfw:dependencies" },
+    "primaryBean": { "@id": "springfw:primaryBean" },
+    "lazyInit": { "@id": "springfw:lazyInit" },
+
+    "groupId": { "@id": "springfw:groupId" },
+    "artifactId": { "@id": "springfw:artifactId" },
+    "packaging": { "@id": "springfw:packaging" },
+    "buildTool": { "@id": "springfw:buildTool" },
+    "javaVersion": { "@id": "springfw:javaVersion" },
+    "springBootVersion": { "@id": "springfw:springBootVersion" },
+
+    "SoftwareSourceCode": "schema:SoftwareSourceCode",
+    "SoftwareApplication": "schema:SoftwareApplication",
+    "programmingLanguage": "schema:programmingLanguage",
+    "runtimePlatform": "schema:runtimePlatform",
+    "codeRepository": "schema:codeRepository",
+    "license": "schema:license"
+  }
+}

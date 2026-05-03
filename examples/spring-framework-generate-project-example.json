@@ -1,0 +1,30 @@
+{
+  "example": "Generate Spring Boot Project",
+  "description": "Example request to Spring Initializr to generate a Maven Spring Boot project with web, JPA, and security starters",
+  "request": {
+    "method": "GET",
+    "url": "https://start.spring.io/starter.zip?type=maven-project&language=java&bootVersion=3.3.0&baseDir=my-app&groupId=com.example&artifactId=my-app&name=my-app&description=Demo+project&packageName=com.example.myapp&packaging=jar&javaVersion=21&dependencies=web,data-jpa,security,actuator,lombok",
+    "headers": {
+      "Accept": "application/zip"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/zip",
+      "Content-Disposition": "attachment; filename=\"my-app.zip\""
+    },
+    "description": "Binary ZIP archive containing a complete Maven Spring Boot project structure"
+  },
+  "metadata": {
+    "availableDependencies": [
+      { "id": "web", "name": "Spring Web", "description": "Spring MVC with embedded Tomcat" },
+      { "id": "data-jpa", "name": "Spring Data JPA", "description": "Persist data with Hibernate and JPA" },
+      { "id": "security", "name": "Spring Security", "description": "Authentication and authorization" },
+      { "id": "actuator", "name": "Spring Boot Actuator", "description": "Production-ready management endpoints" },
+      { "id": "lombok", "name": "Lombok", "description": "Java annotation library to reduce boilerplate" },
+      { "id": "data-redis", "name": "Spring Data Redis", "description": "Redis key-value store" },
+      { "id": "kafka", "name": "Spring Kafka", "description": "Apache Kafka messaging" }
+    ]
+  }
+}

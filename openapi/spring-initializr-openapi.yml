@@ -1,0 +1,326 @@
+openapi: 3.0.3
+info:
+  title: Spring Initializr API
+  description: >-
+    The Spring Initializr API provides programmatic access to project generation
+    for Spring Boot applications. It exposes metadata about available dependencies,
+    build systems, languages, and Java versions, as well as an endpoint to generate
+    project archives (ZIP) with the selected configuration.
+  version: 0.21.0
+  contact:
+    name: Spring Team
+    url: https://github.com/spring-io/start.spring.io
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+  - url: https://start.spring.io
+    description: Official Spring Initializr instance
+paths:
+  /:
+    get:
+      operationId: getMetadata
+      summary: Get Initializr Metadata
+      description: >-
+        Returns full metadata about available options including dependencies,
+        build tools, languages, Java versions, boot versions, and packaging types.
+        The response format varies by Accept header.
+      tags:
+        - Metadata
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+            default: application/json
+          description: >-
+            Use application/vnd.initializr.v2.2+json for structured metadata,
+            or text/html to get the web UI
+      responses:
+        '200':
+          description: Initializr metadata
+          content:
+            application/vnd.initializr.v2.2+json:
+              schema:
+                $ref: '#/components/schemas/InitializrMetadata'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InitializrMetadata'
+  /starter.zip:
+    get:
+      operationId: generateProject
+      summary: Generate Project Archive
+      description: >-
+        Generates and downloads a Spring Boot project archive as a ZIP file
+        with the specified configuration.
+      tags:
+        - Generation
+      parameters:
+        - name: type
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [maven-project, gradle-project, gradle-kotlin-project]
+            default: maven-project
+          description: Build system type
+        - name: language
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [java, kotlin, groovy]
+            default: java
+        - name: bootVersion
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Spring Boot version (e.g., 3.3.0)
+        - name: baseDir
+          in: query
+          required: false
+          schema:
+            type: string
+            default: demo
+          description: Base directory name within the ZIP
+        - name: groupId
+          in: query
+          required: false
+          schema:
+            type: string
+            default: com.example
+        - name: artifactId
+          in: query
+          required: false
+          schema:
+            type: string
+            default: demo
+        - name: name
+          in: query
+          required: false
+          schema:
+            type: string
+            default: demo
+        - name: description
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: packageName
+          in: query
+          required: false
+          schema:
+            type: string
+            default: com.example.demo
+        - name: packaging
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: [jar, war]
+            default: jar
+        - name: javaVersion
+          in: query
+          required: false
+          schema:
+            type: string
+            enum: ['21', '17', '11']
+            default: '21'
+        - name: dependencies
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+          description: Comma-separated dependency IDs (e.g., web,data-jpa,security)
+      responses:
+        '200':
+          description: Project ZIP archive
+          content:
+            application/zip:
+              schema:
+                type: string
+                format: binary
+          headers:
+            Content-Disposition:
+              schema:
+                type: string
+              description: 'attachment; filename="demo.zip"'
+  /starter.tgz:
+    get:
+      operationId: generateProjectTgz
+      summary: Generate Project Archive (TGZ)
+      description: Generates and downloads a Spring Boot project as a TGZ archive
+      tags:
+        - Generation
+      parameters:
+        - name: type
+          in: query
+          schema:
+            type: string
+        - name: language
+          in: query
+          schema:
+            type: string
+        - name: bootVersion
+          in: query
+          schema:
+            type: string
+        - name: groupId
+          in: query
+          schema:
+            type: string
+        - name: artifactId
+          in: query
+          schema:
+            type: string
+        - name: dependencies
+          in: query
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: Project TGZ archive
+          content:
+            application/x-compress:
+              schema:
+                type: string
+                format: binary
+  /dependencies:
+    get:
+      operationId: getDependencies
+      summary: Get Available Dependencies
+      description: Returns a list of all available Spring Boot starters and dependencies
+      tags:
+        - Metadata
+      parameters:
+        - name: bootVersion
+          in: query
+          required: false
+          schema:
+            type: string
+          description: Filter dependencies compatible with this Spring Boot version
+      responses:
+        '200':
+          description: Available dependencies
+          content:
+            application/vnd.initializr.v2.2+json:
+              schema:
+                $ref: '#/components/schemas/DependenciesResponse'
+  /actuator/info:
+    get:
+      operationId: getInfo
+      summary: Get Initializr Instance Info
+      description: Returns information about the current Spring Initializr instance
+      tags:
+        - Management
+      responses:
+        '200':
+          description: Instance info
+          content:
+            application/json:
+              schema:
+                type: object
+  /actuator/health:
+    get:
+      operationId: getHealth
+      summary: Get Initializr Health
+      description: Returns health status of the Spring Initializr service
+      tags:
+        - Management
+      responses:
+        '200':
+          description: Service is healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+components:
+  schemas:
+    InitializrMetadata:
+      type: object
+      properties:
+        dependencies:
+          type: object
+          properties:
+            type:
+              type: string
+            values:
+              type: array
+              items:
+                $ref: '#/components/schemas/DependencyGroup'
+        type:
+          type: object
+        language:
+          type: object
+        bootVersion:
+          type: object
+        packaging:
+          type: object
+        javaVersion:
+          type: object
+        groupId:
+          type: object
+        artifactId:
+          type: object
+        version:
+          type: object
+        name:
+          type: object
+        description:
+          type: object
+        packageName:
+          type: object
+    DependencyGroup:
+      type: object
+      properties:
+        name:
+          type: string
+        values:
+          type: array
+          items:
+            $ref: '#/components/schemas/Dependency'
+    Dependency:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Dependency identifier (e.g., web, data-jpa)
+        name:
+          type: string
+        description:
+          type: string
+        groupId:
+          type: string
+        artifactId:
+          type: string
+        scope:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+        links:
+          type: array
+          items:
+            type: object
+    DependenciesResponse:
+      type: object
+      properties:
+        type:
+          type: string
+        values:
+          type: array
+          items:
+            $ref: '#/components/schemas/DependencyGroup'
+tags:
+  - name: Generation
+  - name: Management
+  - name: Metadata

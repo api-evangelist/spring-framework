@@ -1,0 +1,37 @@
+{
+  "name": "Spring Framework Initializr Structure",
+  "description": "Structural documentation for Spring Initializr metadata and project generation API",
+  "version": "0.21.0",
+  "structures": [
+    {
+      "name": "InitializrMetadata",
+      "description": "Full Initializr metadata returned from the root endpoint",
+      "fields": [
+        { "name": "dependencies", "type": "object", "description": "Available starter dependencies grouped by category" },
+        { "name": "dependencies.type", "type": "string", "description": "Metadata type identifier" },
+        { "name": "dependencies.values", "type": "array", "description": "Dependency groups" },
+        { "name": "type", "type": "object", "description": "Supported build system types" },
+        { "name": "language", "type": "object", "description": "Supported programming languages" },
+        { "name": "bootVersion", "type": "object", "description": "Available Spring Boot versions" },
+        { "name": "packaging", "type": "object", "description": "Packaging options (jar/war)" },
+        { "name": "javaVersion", "type": "object", "description": "Supported Java versions" },
+        { "name": "groupId", "type": "object", "description": "Default group ID configuration" },
+        { "name": "artifactId", "type": "object", "description": "Default artifact ID configuration" }
+      ]
+    },
+    {
+      "name": "Dependency",
+      "description": "A single Spring Boot starter dependency",
+      "fields": [
+        { "name": "id", "type": "string", "description": "Dependency identifier (e.g., web, data-jpa)", "required": true },
+        { "name": "name", "type": "string", "description": "Human-readable name" },
+        { "name": "description", "type": "string", "description": "What the dependency provides" },
+        { "name": "groupId", "type": "string", "description": "Maven group ID" },
+        { "name": "artifactId", "type": "string", "description": "Maven artifact ID" },
+        { "name": "scope", "type": "string", "description": "Maven scope" },
+        { "name": "tags", "type": "array", "description": "Categorization tags" },
+        { "name": "links", "type": "array", "description": "Documentation and guide links" }
+      ]
+    }
+  ]
+}

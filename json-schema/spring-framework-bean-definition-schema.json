@@ -1,0 +1,132 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://spring.io/projects/spring-framework/schemas/bean-definition",
+  "title": "Spring Framework Bean Definition",
+  "description": "Represents a Spring IoC container bean definition as returned by the Actuator /beans endpoint",
+  "type": "object",
+  "properties": {
+    "contexts": {
+      "type": "object",
+      "description": "Application contexts keyed by context ID",
+      "additionalProperties": {
+        "$ref": "#/definitions/ApplicationContext"
+      }
+    }
+  },
+  "definitions": {
+    "ApplicationContext": {
+      "type": "object",
+      "properties": {
+        "beans": {
+          "type": "object",
+          "description": "Bean definitions keyed by bean name",
+          "additionalProperties": {
+            "$ref": "#/definitions/BeanDefinition"
+          }
+        },
+        "id": {
+          "type": "string",
+          "description": "Application context identifier"
+        },
+        "parentId": {
+          "type": ["string", "null"],
+          "description": "Parent context ID if hierarchical"
+        }
+      }
+    },
+    "BeanDefinition": {
+      "type": "object",
+      "properties": {
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Alternative names for the bean"
+        },
+        "scope": {
+          "type": "string",
+          "enum": ["singleton", "prototype", "request", "session", "application", "websocket"],
+          "description": "Bean scope"
+        },
+        "type": {
+          "type": "string",
+          "description": "Fully qualified class name"
+        },
+        "resource": {
+          "type": "string",
+          "description": "Source configuration resource (class or file)"
+        },
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Names of beans this bean depends on"
+        }
+      }
+    },
+    "SpringInitializrProject": {
+      "title": "Spring Initializr Project Configuration",
+      "description": "Configuration parameters for generating a Spring Boot project",
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["maven-project", "gradle-project", "gradle-kotlin-project"],
+          "default": "maven-project"
+        },
+        "language": {
+          "type": "string",
+          "enum": ["java", "kotlin", "groovy"],
+          "default": "java"
+        },
+        "bootVersion": {
+          "type": "string",
+          "description": "Spring Boot version (e.g., 3.3.0)"
+        },
+        "baseDir": {
+          "type": "string",
+          "default": "demo"
+        },
+        "groupId": {
+          "type": "string",
+          "default": "com.example",
+          "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9]*)*$"
+        },
+        "artifactId": {
+          "type": "string",
+          "default": "demo",
+          "pattern": "^[a-z][a-z0-9-]*$"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "packageName": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9]*)*$"
+        },
+        "packaging": {
+          "type": "string",
+          "enum": ["jar", "war"],
+          "default": "jar"
+        },
+        "javaVersion": {
+          "type": "string",
+          "enum": ["21", "17", "11"],
+          "default": "21"
+        },
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Spring Boot starter dependency IDs"
+        }
+      }
+    }
+  }
+}

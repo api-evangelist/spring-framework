@@ -1,0 +1,133 @@
+name: Spring Framework Vocabulary
+description: Domain vocabulary for the Spring Framework including IoC, dependency injection, MVC patterns, and project bootstrapping concepts
+version: 6.2.0
+created: '2026-05-02'
+modified: '2026-05-02'
+terms:
+  - term: IoC Container
+    definition: The Inversion of Control container that manages Spring bean lifecycle, wiring, and configuration
+    related:
+      - ApplicationContext
+      - BeanFactory
+      - Dependency Injection
+    tags:
+      - Core
+      - Pattern
+
+  - term: Dependency Injection
+    definition: Design pattern where an object's dependencies are provided externally rather than created internally; core pattern in Spring
+    related:
+      - IoC Container
+      - Autowiring
+      - Bean
+    tags:
+      - Core
+      - Pattern
+
+  - term: Bean
+    definition: An object managed by the Spring IoC container; configured via annotations, Java config, or XML
+    related:
+      - BeanDefinition
+      - ApplicationContext
+      - Scope
+    tags:
+      - Core
+
+  - term: ApplicationContext
+    definition: The central interface for Spring IoC container providing bean definitions, lifecycle management, and event publishing
+    related:
+      - Bean
+      - BeanFactory
+      - Environment
+    tags:
+      - Core
+
+  - term: Autowiring
+    definition: Spring mechanism for automatically resolving and injecting dependencies using @Autowired, @Inject, or constructor injection
+    related:
+      - Dependency Injection
+      - Bean
+      - Component Scan
+    tags:
+      - Core
+
+  - term: AOP
+    definition: Aspect-Oriented Programming — cross-cutting concerns like logging, security, and transactions implemented as aspects in Spring
+    related:
+      - Aspect
+      - Pointcut
+      - Advice
+      - Around
+    tags:
+      - AOP
+      - Pattern
+
+  - term: Spring MVC
+    definition: Spring's Model-View-Controller web framework built on the Servlet API for building RESTful and web applications
+    related:
+      - DispatcherServlet
+      - Controller
+      - RequestMapping
+    tags:
+      - Web
+      - MVC
+
+  - term: DispatcherServlet
+    definition: The front controller in Spring MVC that dispatches HTTP requests to appropriate handler methods
+    related:
+      - Spring MVC
+      - HandlerMapping
+      - ViewResolver
+    tags:
+      - Web
+      - MVC
+
+  - term: Spring Initializr
+    definition: Web service and API for generating Spring Boot project skeletons with selected dependencies, build tools, and metadata
+    related:
+      - Spring Boot
+      - Starter
+      - Project Generation
+    tags:
+      - Bootstrap
+      - Developer Experience
+
+  - term: Starter
+    definition: Convenient dependency descriptor that aggregates all Spring framework dependencies needed for a feature (e.g., spring-boot-starter-web)
+    related:
+      - Spring Initializr
+      - Auto-Configuration
+      - Spring Boot
+    tags:
+      - Spring Boot
+      - Dependency
+
+  - term: Auto-Configuration
+    definition: Spring Boot mechanism that automatically configures the application context based on detected classpath dependencies
+    related:
+      - Starter
+      - @SpringBootApplication
+      - Condition
+    tags:
+      - Spring Boot
+      - Configuration
+
+  - term: Actuator
+    definition: Spring Boot module providing production-ready management endpoints for health, metrics, environment, and configuration
+    related:
+      - Health
+      - Metrics
+      - Management
+    tags:
+      - Operations
+      - Spring Boot
+
+  - term: Profile
+    definition: Spring mechanism for conditional bean registration and configuration based on active environments (dev, test, prod)
+    related:
+      - @Profile
+      - Environment
+      - Bean
+    tags:
+      - Configuration
+      - Core

@@ -1,0 +1,201 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: "Spring Initializr"
+  description: "Project generation API for bootstrapping Spring Boot applications. Provides metadata about available starters and generates project archives."
+  tags:
+    - Bootstrap
+    - Code Generation
+    - Project Generation
+    - Spring
+    - Spring Boot
+  created: "2026-05-02"
+  modified: "2026-05-02"
+
+capability:
+  consumes:
+    - type: http
+      namespace: spring-initializr
+      baseUri: https://start.spring.io
+      description: "Official Spring Initializr project generation API"
+      resources:
+        - name: metadata
+          path: /
+          description: "Initializr metadata discovery"
+          operations:
+            - name: get-metadata
+              method: GET
+              description: "Get available dependencies, build tools, languages, and Java versions"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: dependencies
+          path: /dependencies
+          description: "Available Spring Boot starters"
+          operations:
+            - name: list-dependencies
+              method: GET
+              description: "List all available Spring Boot starter dependencies"
+              inputParameters:
+                - name: bootVersion
+                  in: query
+                  type: string
+                  required: false
+                  description: "Filter by Spring Boot version"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: generate
+          path: /starter.zip
+          description: "Project archive generation"
+          operations:
+            - name: generate-project
+              method: GET
+              description: "Generate a Spring Boot project ZIP archive"
+              inputParameters:
+                - name: type
+                  in: query
+                  type: string
+                  required: false
+                  description: "Build system (maven-project, gradle-project)"
+                - name: language
+                  in: query
+                  type: string
+                  required: false
+                  description: "Language (java, kotlin, groovy)"
+                - name: bootVersion
+                  in: query
+                  type: string
+                  required: false
+                  description: "Spring Boot version"
+                - name: groupId
+                  in: query
+                  type: string
+                  required: false
+                  description: "Maven group ID"
+                - name: artifactId
+                  in: query
+                  type: string
+                  required: false
+                  description: "Maven artifact ID"
+                - name: dependencies
+                  in: query
+                  type: string
+                  required: false
+                  description: "Comma-separated dependency IDs"
+                - name: javaVersion
+                  in: query
+                  type: string
+                  required: false
+                  description: "Java version (21, 17, 11)"
+                - name: packaging
+                  in: query
+                  type: string
+                  required: false
+                  description: "Packaging type (jar, war)"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+  exposes:
+    - type: rest
+      port: 8100
+      namespace: spring-initializr-api
+      resources:
+        - path: /v1/metadata
+          name: initializr-metadata
+          description: "Spring Initializr metadata"
+          operations:
+            - method: GET
+              name: get-metadata
+              description: "Get available options for project generation"
+              call: "spring-initializr.get-metadata"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+        - path: /v1/dependencies
+          name: dependencies
+          description: "Available Spring Boot starters"
+          operations:
+            - method: GET
+              name: list-dependencies
+              description: "List all available Spring Boot starter dependencies"
+              call: "spring-initializr.list-dependencies"
+              with:
+                bootVersion: "rest.bootVersion"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+        - path: /v1/projects
+          name: project-generation
+          description: "Generate Spring Boot project"
+          operations:
+            - method: GET
+              name: generate-project
+              description: "Generate a Spring Boot project archive"
+              call: "spring-initializr.generate-project"
+              with:
+                type: "rest.type"
+                language: "rest.language"
+                bootVersion: "rest.bootVersion"
+                groupId: "rest.groupId"
+                artifactId: "rest.artifactId"
+                dependencies: "rest.dependencies"
+                javaVersion: "rest.javaVersion"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9100
+      namespace: spring-initializr-mcp
+      transport: http
+      tools:
+        - name: get-initializr-metadata
+          description: "Get all available Spring Boot versions, dependencies, build tools, and languages from Spring Initializr"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "spring-initializr.get-metadata"
+          outputParameters:
+            - type: object
+              mapping: "$."
+
+        - name: list-spring-boot-starters
+          description: "List all available Spring Boot starter dependencies, optionally filtered by Boot version"
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "spring-initializr.list-dependencies"
+          with:
+            bootVersion: "tools.bootVersion"
+          outputParameters:
+            - type: object
+              mapping: "$."
+
+        - name: generate-spring-boot-project
+          description: "Generate a new Spring Boot project with specified build tool, language, starters, and group/artifact coordinates"
+          hints:
+            readOnly: false
+            destructive: false
+          call: "spring-initializr.generate-project"
+          with:
+            type: "tools.buildTool"
+            language: "tools.language"
+            bootVersion: "tools.bootVersion"
+            groupId: "tools.groupId"
+            artifactId: "tools.artifactId"
+            dependencies: "tools.dependencies"
+            javaVersion: "tools.javaVersion"
+            packaging: "tools.packaging"
+          outputParameters:
+            - type: object
+              mapping: "$."
