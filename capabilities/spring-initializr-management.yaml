@@ -1,0 +1,99 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Spring Initializr API — Management
+  description: 'Spring Initializr API — Management. 2 operations. Lead operation: Get Initializr Health. Self-contained Naftiko
+    capability covering one Spring Framework business surface.'
+  tags:
+  - Spring Framework
+  - Management
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    SPRING_FRAMEWORK_API_KEY: SPRING_FRAMEWORK_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: spring-initializr-management
+    baseUri: https://start.spring.io
+    description: Spring Initializr API — Management business capability. Self-contained, no shared references.
+    resources:
+    - name: actuator-health
+      path: /actuator/health
+      operations:
+      - name: gethealth
+        method: GET
+        description: Get Initializr Health
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: actuator-info
+      path: /actuator/info
+      operations:
+      - name: getinfo
+        method: GET
+        description: Get Initializr Instance Info
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    namespace: spring-initializr-management-rest
+    port: 8080
+    description: REST adapter for Spring Initializr API — Management. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/actuator/health
+      name: actuator-health
+      description: REST surface for actuator-health.
+      operations:
+      - method: GET
+        name: gethealth
+        description: Get Initializr Health
+        call: spring-initializr-management.gethealth
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/actuator/info
+      name: actuator-info
+      description: REST surface for actuator-info.
+      operations:
+      - method: GET
+        name: getinfo
+        description: Get Initializr Instance Info
+        call: spring-initializr-management.getinfo
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: spring-initializr-management-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Spring Initializr API — Management. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: get-initializr-health
+      description: Get Initializr Health
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: spring-initializr-management.gethealth
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-initializr-instance-info
+      description: Get Initializr Instance Info
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: spring-initializr-management.getinfo
+      outputParameters:
+      - type: object
+        mapping: $.
