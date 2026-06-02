@@ -2,12 +2,20 @@
   "repo": "spring-framework",
   "feeds": [
     {
-      "source": "https://spring.io/blog",
+      "source": "https://spring.io/blog.atom",
       "feed_url": "https://spring.io/blog.atom",
-      "title": "Spring",
-      "saved": 4
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    },
+    {
+      "source": "https://github.com/spring-projects/spring-framework",
+      "feed_url": "https://github.com/spring-projects/spring-framework",
+      "title": "",
+      "saved": 0,
+      "method": "none"
     }
   ],
-  "post_count": 8,
-  "fetched": "2026-05-17T20:48:52Z"
+  "post_count": 12,
+  "fetched": "2026-06-01T23:35:02Z"
 }
