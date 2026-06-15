@@ -1,0 +1,691 @@
+{
+  "item": [
+    {
+      "id": "e0984757-9d51-4f88-9cb8-d81b9b4c7032",
+      "name": "Generation",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5e4d0626-5daf-43ca-bc69-4d9dfff0703c",
+          "name": "Generate Project Archive",
+          "request": {
+            "name": "Generate Project Archive",
+            "description": {
+              "content": "Generates and downloads a Spring Boot project archive as a ZIP file with the specified configuration.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "starter.zip"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "maven-project",
+                  "description": "Build system type"
+                },
+                {
+                  "disabled": false,
+                  "key": "language",
+                  "value": "java"
+                },
+                {
+                  "disabled": false,
+                  "key": "bootVersion",
+                  "value": "<string>",
+                  "description": "Spring Boot version (e.g., 3.3.0)"
+                },
+                {
+                  "disabled": false,
+                  "key": "baseDir",
+                  "value": "demo",
+                  "description": "Base directory name within the ZIP"
+                },
+                {
+                  "disabled": false,
+                  "key": "groupId",
+                  "value": "com.example"
+                },
+                {
+                  "disabled": false,
+                  "key": "artifactId",
+                  "value": "demo"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "demo"
+                },
+                {
+                  "disabled": false,
+                  "key": "description",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "packageName",
+                  "value": "com.example.demo"
+                },
+                {
+                  "disabled": false,
+                  "key": "packaging",
+                  "value": "jar"
+                },
+                {
+                  "disabled": false,
+                  "key": "javaVersion",
+                  "value": "21"
+                },
+                {
+                  "disabled": false,
+                  "key": "dependencies",
+                  "value": "<string>",
+                  "description": "Comma-separated dependency IDs (e.g., web,data-jpa,security)"
+                },
+                {
+                  "disabled": false,
+                  "key": "dependencies",
+                  "value": "<string>",
+                  "description": "Comma-separated dependency IDs (e.g., web,data-jpa,security)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/zip"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "41200a67-8cd5-4663-a8b0-f151a6bff979",
+              "name": "Project ZIP archive",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "starter.zip"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "type",
+                      "value": "maven-project"
+                    },
+                    {
+                      "key": "language",
+                      "value": "java"
+                    },
+                    {
+                      "key": "bootVersion",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "baseDir",
+                      "value": "demo"
+                    },
+                    {
+                      "key": "groupId",
+                      "value": "com.example"
+                    },
+                    {
+                      "key": "artifactId",
+                      "value": "demo"
+                    },
+                    {
+                      "key": "name",
+                      "value": "demo"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "packageName",
+                      "value": "com.example.demo"
+                    },
+                    {
+                      "key": "packaging",
+                      "value": "jar"
+                    },
+                    {
+                      "key": "javaVersion",
+                      "value": "21"
+                    },
+                    {
+                      "key": "dependencies",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dependencies",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/zip"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "attachment; filename=\"demo.zip\"",
+                  "key": "Content-Disposition",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/zip"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c953a136-6603-4d2d-ba5b-592bb433daa1",
+          "name": "Generate Project Archive (TGZ)",
+          "request": {
+            "name": "Generate Project Archive (TGZ)",
+            "description": {
+              "content": "Generates and downloads a Spring Boot project as a TGZ archive",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "starter.tgz"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "language",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "bootVersion",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "groupId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "artifactId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "dependencies",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "dependencies",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/x-compress"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fb5cbdf5-98d2-4617-a925-03425196e884",
+              "name": "Project TGZ archive",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "starter.tgz"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "bootVersion",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "groupId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "artifactId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dependencies",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dependencies",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/x-compress"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/x-compress"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "fbd1e425-012c-43aa-8f9f-edb098476850",
+      "name": "Management",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0a1cf899-0c0f-4da9-9aaa-71ba4c3c9782",
+          "name": "Get Initializr Instance Info",
+          "request": {
+            "name": "Get Initializr Instance Info",
+            "description": {
+              "content": "Returns information about the current Spring Initializr instance",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "actuator",
+                "info"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a6a97f9e-79df-410b-88b7-056a99ea992e",
+              "name": "Instance info",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "actuator",
+                    "info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "74f4e0ac-d4bc-48a3-8a32-96ee6cec1658",
+          "name": "Get Initializr Health",
+          "request": {
+            "name": "Get Initializr Health",
+            "description": {
+              "content": "Returns health status of the Spring Initializr service",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "actuator",
+                "health"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "38dad1c4-3984-48a6-91df-7078e1e7bdd6",
+              "name": "Service is healthy",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "actuator",
+                    "health"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "d54dec19-f1dd-4ef0-bdab-f558f74547c2",
+      "name": "Metadata",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "93b46c70-79b7-40f3-8173-35cf118f2224",
+          "name": "Get Initializr Metadata",
+          "request": {
+            "name": "Get Initializr Metadata",
+            "description": {
+              "content": "Returns full metadata about available options including dependencies, build tools, languages, Java versions, boot versions, and packaging types. The response format varies by Accept header.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.initializr.v2.2+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0ef463be-7ba8-406b-9739-19edb7876eaf",
+              "name": "Initializr metadata",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Use application/vnd.initializr.v2.2+json for structured metadata, or text/html to get the web UI",
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.initializr.v2.2+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.initializr.v2.2+json"
+                }
+              ],
+              "body": "{\n  \"dependencies\": {\n    \"type\": \"string\",\n    \"values\": [\n      {\n        \"name\": \"string\",\n        \"values\": [\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"groupId\": \"string\",\n            \"artifactId\": \"string\",\n            \"scope\": \"string\",\n            \"tags\": [\n              \"string\",\n              \"string\"\n            ]\n          },\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"groupId\": \"string\",\n            \"artifactId\": \"string\",\n            \"scope\": \"string\",\n            \"tags\": [\n              \"string\",\n              \"string\"\n            ]\n          }\n        ]\n      },\n      {\n        \"name\": \"string\",\n        \"values\": [\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"groupId\": \"string\",\n            \"artifactId\": \"string\",\n            \"scope\": \"string\",\n            \"tags\": [\n              \"string\",\n              \"string\"\n            ]\n          },\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"groupId\": \"string\",\n            \"artifactId\": \"string\",\n            \"scope\": \"string\",\n            \"tags\": [\n              \"string\",\n              \"string\"\n            ]\n          }\n        ]\n      }\n    ]\n  },\n  \"type\": {},\n  \"language\": {},\n  \"bootVersion\": {},\n  \"packaging\": {},\n  \"javaVersion\": {},\n  \"groupId\": {},\n  \"artifactId\": {},\n  \"version\": {},\n  \"name\": {},\n  \"description\": {},\n  \"packageName\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cea04fe6-3020-464b-99c0-b82587160064",
+          "name": "Get Available Dependencies",
+          "request": {
+            "name": "Get Available Dependencies",
+            "description": {
+              "content": "Returns a list of all available Spring Boot starters and dependencies",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dependencies"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "bootVersion",
+                  "value": "<string>",
+                  "description": "Filter dependencies compatible with this Spring Boot version"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.initializr.v2.2+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3f5897ea-0e07-48de-8f34-a939696ee564",
+              "name": "Available dependencies",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dependencies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "bootVersion",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.initializr.v2.2+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.initializr.v2.2+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"values\": [\n    {\n      \"name\": \"string\",\n      \"values\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"groupId\": \"string\",\n          \"artifactId\": \"string\",\n          \"scope\": \"string\",\n          \"tags\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"groupId\": \"string\",\n          \"artifactId\": \"string\",\n          \"scope\": \"string\",\n          \"tags\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ]\n    },\n    {\n      \"name\": \"string\",\n      \"values\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"groupId\": \"string\",\n          \"artifactId\": \"string\",\n          \"scope\": \"string\",\n          \"tags\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"groupId\": \"string\",\n          \"artifactId\": \"string\",\n          \"scope\": \"string\",\n          \"tags\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://start.spring.io",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "fec4ee2a-e510-42af-ae06-dcad4f955272",
+    "name": "Spring Initializr API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Spring Initializr API provides programmatic access to project generation for Spring Boot applications. It exposes metadata about available dependencies, build systems, languages, and Java versions, as well as an endpoint to generate project archives (ZIP) with the selected configuration.\n\nContact Support:\n Name: Spring Team",
+      "type": "text/plain"
+    }
+  }
+}

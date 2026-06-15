@@ -1,0 +1,212 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Spring Initializr API",
+    "version": "0.21.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Metadata",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Initializr Metadata",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://start.spring.io/",
+            "headers": [
+              {
+                "name": "Accept",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Returns full metadata about available options including dependencies, build tools, languages, Java versions, boot versions, and packaging types. The response format varies by Accept header."
+        },
+        {
+          "info": {
+            "name": "Get Available Dependencies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://start.spring.io/dependencies",
+            "params": [
+              {
+                "name": "bootVersion",
+                "value": "",
+                "type": "query",
+                "description": "Filter dependencies compatible with this Spring Boot version"
+              }
+            ]
+          },
+          "docs": "Returns a list of all available Spring Boot starters and dependencies"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Generation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Generate Project Archive",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://start.spring.io/starter.zip",
+            "params": [
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "Build system type"
+              },
+              {
+                "name": "language",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "bootVersion",
+                "value": "",
+                "type": "query",
+                "description": "Spring Boot version (e.g., 3.3.0)"
+              },
+              {
+                "name": "baseDir",
+                "value": "",
+                "type": "query",
+                "description": "Base directory name within the ZIP"
+              },
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "artifactId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "description",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "packageName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "packaging",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "javaVersion",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "dependencies",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated dependency IDs (e.g., web,data-jpa,security)"
+              }
+            ]
+          },
+          "docs": "Generates and downloads a Spring Boot project archive as a ZIP file with the specified configuration."
+        },
+        {
+          "info": {
+            "name": "Generate Project Archive (TGZ)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://start.spring.io/starter.tgz",
+            "params": [
+              {
+                "name": "type",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "language",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "bootVersion",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "artifactId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "dependencies",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Generates and downloads a Spring Boot project as a TGZ archive"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Management",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Initializr Instance Info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://start.spring.io/actuator/info"
+          },
+          "docs": "Returns information about the current Spring Initializr instance"
+        },
+        {
+          "info": {
+            "name": "Get Initializr Health",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://start.spring.io/actuator/health"
+          },
+          "docs": "Returns health status of the Spring Initializr service"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
