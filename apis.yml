@@ -113,7 +113,7 @@ common:
     url: https://spring.io/blog
   - type: Guides
     url: https://spring.io/guides
-  - type: Quick Start
+  - type: GettingStarted
     url: https://spring.io/quickstart
   - type: StackOverflow
     url: https://stackoverflow.com/questions/tagged/spring
@@ -123,7 +123,7 @@ common:
     url: https://www.youtube.com/user/SpringSourceDev
   - type: Maven Repository
     url: https://mvnrepository.com/artifact/org.springframework/spring-framework
-  - type: Releases
+  - type: ReleaseNotes
     url: https://github.com/spring-projects/spring-framework/releases
   - type: Documentation
     url: https://docs.spring.io/spring-framework/docs/current/reference/html/
