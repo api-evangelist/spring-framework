@@ -103,6 +103,10 @@ apis:
       - type: Guide
         url: https://spring.io/guides/gs/reactive-rest-service/
 common:
+  - type: VulnerabilityDisclosure
+    url: security/spring-framework-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/spring-framework-domain-security.yml
   - type: Website
     url: https://spring.io/projects/spring-framework
   - type: GitHubOrganization
