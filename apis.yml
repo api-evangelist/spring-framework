@@ -103,6 +103,8 @@ apis:
       - type: Guide
         url: https://spring.io/guides/gs/reactive-rest-service/
 common:
+  - type: AgenticAccess
+    url: agentic-access/spring-framework-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/spring-framework-vulnerability-disclosure.yml
   - type: DomainSecurity
