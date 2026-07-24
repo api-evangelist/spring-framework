@@ -1,0 +1,48 @@
+openapi: 3.0.3
+info:
+  title: Spring Initializr Generation Management API
+  description: The Spring Initializr API provides programmatic access to project generation for Spring Boot applications. It exposes metadata about available dependencies, build systems, languages, and Java versions, as well as an endpoint to generate project archives (ZIP) with the selected configuration.
+  version: 0.21.0
+  contact:
+    name: Spring Team
+    url: https://github.com/spring-io/start.spring.io
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://start.spring.io
+  description: Official Spring Initializr instance
+tags:
+- name: Management
+paths:
+  /actuator/info:
+    get:
+      operationId: getInfo
+      summary: Get Initializr Instance Info
+      description: Returns information about the current Spring Initializr instance
+      tags:
+      - Management
+      responses:
+        '200':
+          description: Instance info
+          content:
+            application/json:
+              schema:
+                type: object
+  /actuator/health:
+    get:
+      operationId: getHealth
+      summary: Get Initializr Health
+      description: Returns health status of the Spring Initializr service
+      tags:
+      - Management
+      responses:
+        '200':
+          description: Service is healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string

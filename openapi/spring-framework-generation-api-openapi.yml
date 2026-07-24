@@ -1,0 +1,170 @@
+openapi: 3.0.3
+info:
+  title: Spring Initializr Generation API
+  description: The Spring Initializr API provides programmatic access to project generation for Spring Boot applications. It exposes metadata about available dependencies, build systems, languages, and Java versions, as well as an endpoint to generate project archives (ZIP) with the selected configuration.
+  version: 0.21.0
+  contact:
+    name: Spring Team
+    url: https://github.com/spring-io/start.spring.io
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://start.spring.io
+  description: Official Spring Initializr instance
+tags:
+- name: Generation
+paths:
+  /starter.zip:
+    get:
+      operationId: generateProject
+      summary: Generate Project Archive
+      description: Generates and downloads a Spring Boot project archive as a ZIP file with the specified configuration.
+      tags:
+      - Generation
+      parameters:
+      - name: type
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - maven-project
+          - gradle-project
+          - gradle-kotlin-project
+          default: maven-project
+        description: Build system type
+      - name: language
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - java
+          - kotlin
+          - groovy
+          default: java
+      - name: bootVersion
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Spring Boot version (e.g., 3.3.0)
+      - name: baseDir
+        in: query
+        required: false
+        schema:
+          type: string
+          default: demo
+        description: Base directory name within the ZIP
+      - name: groupId
+        in: query
+        required: false
+        schema:
+          type: string
+          default: com.example
+      - name: artifactId
+        in: query
+        required: false
+        schema:
+          type: string
+          default: demo
+      - name: name
+        in: query
+        required: false
+        schema:
+          type: string
+          default: demo
+      - name: description
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: packageName
+        in: query
+        required: false
+        schema:
+          type: string
+          default: com.example.demo
+      - name: packaging
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - jar
+          - war
+          default: jar
+      - name: javaVersion
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - '21'
+          - '17'
+          - '11'
+          default: '21'
+      - name: dependencies
+        in: query
+        required: false
+        schema:
+          type: array
+          items:
+            type: string
+        description: Comma-separated dependency IDs (e.g., web,data-jpa,security)
+      responses:
+        '200':
+          description: Project ZIP archive
+          content:
+            application/zip:
+              schema:
+                type: string
+                format: binary
+          headers:
+            Content-Disposition:
+              schema:
+                type: string
+              description: attachment; filename="demo.zip"
+  /starter.tgz:
+    get:
+      operationId: generateProjectTgz
+      summary: Generate Project Archive (TGZ)
+      description: Generates and downloads a Spring Boot project as a TGZ archive
+      tags:
+      - Generation
+      parameters:
+      - name: type
+        in: query
+        schema:
+          type: string
+      - name: language
+        in: query
+        schema:
+          type: string
+      - name: bootVersion
+        in: query
+        schema:
+          type: string
+      - name: groupId
+        in: query
+        schema:
+          type: string
+      - name: artifactId
+        in: query
+        schema:
+          type: string
+      - name: dependencies
+        in: query
+        schema:
+          type: array
+          items:
+            type: string
+      responses:
+        '200':
+          description: Project TGZ archive
+          content:
+            application/x-compress:
+              schema:
+                type: string
+                format: binary

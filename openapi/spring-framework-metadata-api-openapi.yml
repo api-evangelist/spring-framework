@@ -1,0 +1,140 @@
+openapi: 3.0.3
+info:
+  title: Spring Initializr Generation Metadata API
+  description: The Spring Initializr API provides programmatic access to project generation for Spring Boot applications. It exposes metadata about available dependencies, build systems, languages, and Java versions, as well as an endpoint to generate project archives (ZIP) with the selected configuration.
+  version: 0.21.0
+  contact:
+    name: Spring Team
+    url: https://github.com/spring-io/start.spring.io
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://start.spring.io
+  description: Official Spring Initializr instance
+tags:
+- name: Metadata
+paths:
+  /:
+    get:
+      operationId: getMetadata
+      summary: Get Initializr Metadata
+      description: Returns full metadata about available options including dependencies, build tools, languages, Java versions, boot versions, and packaging types. The response format varies by Accept header.
+      tags:
+      - Metadata
+      parameters:
+      - name: Accept
+        in: header
+        schema:
+          type: string
+          default: application/json
+        description: Use application/vnd.initializr.v2.2+json for structured metadata, or text/html to get the web UI
+      responses:
+        '200':
+          description: Initializr metadata
+          content:
+            application/vnd.initializr.v2.2+json:
+              schema:
+                $ref: '#/components/schemas/InitializrMetadata'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InitializrMetadata'
+  /dependencies:
+    get:
+      operationId: getDependencies
+      summary: Get Available Dependencies
+      description: Returns a list of all available Spring Boot starters and dependencies
+      tags:
+      - Metadata
+      parameters:
+      - name: bootVersion
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Filter dependencies compatible with this Spring Boot version
+      responses:
+        '200':
+          description: Available dependencies
+          content:
+            application/vnd.initializr.v2.2+json:
+              schema:
+                $ref: '#/components/schemas/DependenciesResponse'
+components:
+  schemas:
+    DependenciesResponse:
+      type: object
+      properties:
+        type:
+          type: string
+        values:
+          type: array
+          items:
+            $ref: '#/components/schemas/DependencyGroup'
+    Dependency:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Dependency identifier (e.g., web, data-jpa)
+        name:
+          type: string
+        description:
+          type: string
+        groupId:
+          type: string
+        artifactId:
+          type: string
+        scope:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+        links:
+          type: array
+          items:
+            type: object
+    InitializrMetadata:
+      type: object
+      properties:
+        dependencies:
+          type: object
+          properties:
+            type:
+              type: string
+            values:
+              type: array
+              items:
+                $ref: '#/components/schemas/DependencyGroup'
+        type:
+          type: object
+        language:
+          type: object
+        bootVersion:
+          type: object
+        packaging:
+          type: object
+        javaVersion:
+          type: object
+        groupId:
+          type: object
+        artifactId:
+          type: object
+        version:
+          type: object
+        name:
+          type: object
+        description:
+          type: object
+        packageName:
+          type: object
+    DependencyGroup:
+      type: object
+      properties:
+        name:
+          type: string
+        values:
+          type: array
+          items:
+            $ref: '#/components/schemas/Dependency'
