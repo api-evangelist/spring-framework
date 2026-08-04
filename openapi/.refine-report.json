@@ -1,0 +1,18 @@
+{
+  "provider": "spring-framework",
+  "sources": [
+    "spring-framework-generation-api-openapi.yml",
+    "spring-framework-management-api-openapi.yml",
+    "spring-framework-metadata-api-openapi.yml"
+  ],
+  "outputs": [
+    "spring-framework-generation-api-openapi.yml",
+    "spring-framework-management-api-openapi.yml",
+    "spring-framework-metadata-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
