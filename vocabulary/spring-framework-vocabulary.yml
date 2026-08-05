@@ -106,7 +106,7 @@ terms:
     definition: Spring Boot mechanism that automatically configures the application context based on detected classpath dependencies
     related:
       - Starter
-      - @SpringBootApplication
+      - "@SpringBootApplication"
       - Condition
     tags:
       - Spring Boot
@@ -125,7 +125,7 @@ terms:
   - term: Profile
     definition: Spring mechanism for conditional bean registration and configuration based on active environments (dev, test, prod)
     related:
-      - @Profile
+      - "@Profile"
       - Environment
       - Bean
     tags:
