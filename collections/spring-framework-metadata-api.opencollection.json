@@ -1,0 +1,54 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Spring Initializr Generation Metadata API",
+    "version": "0.21.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Metadata",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Initializr Metadata",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://start.spring.io/",
+            "headers": [
+              {
+                "name": "Accept",
+                "value": ""
+              }
+            ]
+          },
+          "docs": "Returns full metadata about available options including dependencies, build tools, languages, Java versions, boot versions, and packaging types. The response format varies by Accept header."
+        },
+        {
+          "info": {
+            "name": "Get Available Dependencies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://start.spring.io/dependencies",
+            "params": [
+              {
+                "name": "bootVersion",
+                "value": "",
+                "type": "query",
+                "description": "Filter dependencies compatible with this Spring Boot version"
+              }
+            ]
+          },
+          "docs": "Returns a list of all available Spring Boot starters and dependencies"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,40 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Spring Initializr Generation Management API",
+    "version": "0.21.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Management",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Initializr Instance Info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://start.spring.io/actuator/info"
+          },
+          "docs": "Returns information about the current Spring Initializr instance"
+        },
+        {
+          "info": {
+            "name": "Get Initializr Health",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://start.spring.io/actuator/health"
+          },
+          "docs": "Returns health status of the Spring Initializr service"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

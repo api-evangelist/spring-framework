@@ -1,0 +1,176 @@
+{
+  "item": [
+    {
+      "id": "be4161d7-7492-40af-a945-073cbaccda38",
+      "name": "Management",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b2cd87b4-ac51-467d-85e6-483251cf1536",
+          "name": "Get Initializr Instance Info",
+          "request": {
+            "name": "Get Initializr Instance Info",
+            "description": {
+              "content": "Returns information about the current Spring Initializr instance",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "actuator",
+                "info"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "642939bd-e6a2-4a05-a3a3-224a6e5540ef",
+              "name": "Instance info",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "actuator",
+                    "info"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "eb568a5e-f2b9-4a5a-8424-2c4db01a20de",
+          "name": "Get Initializr Health",
+          "request": {
+            "name": "Get Initializr Health",
+            "description": {
+              "content": "Returns health status of the Spring Initializr service",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "actuator",
+                "health"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b765460b-5a4c-4b39-b779-7900630776c2",
+              "name": "Service is healthy",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "actuator",
+                    "health"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://start.spring.io",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "8a7df837-4028-4371-86a9-1e6ea15f290d",
+    "name": "Spring Initializr Generation Management API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Spring Initializr API provides programmatic access to project generation for Spring Boot applications. It exposes metadata about available dependencies, build systems, languages, and Java versions, as well as an endpoint to generate project archives (ZIP) with the selected configuration.\n\nContact Support:\n Name: Spring Team",
+      "type": "text/plain"
+    }
+  }
+}

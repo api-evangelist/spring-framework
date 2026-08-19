@@ -1,0 +1,190 @@
+{
+  "item": [
+    {
+      "id": "5fc9eddc-1b7a-4b7f-a4b7-ab457489ae11",
+      "name": "Metadata",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "297e34e4-013c-4857-ac40-7bd2ff63bdbc",
+          "name": "Get Initializr Metadata",
+          "request": {
+            "name": "Get Initializr Metadata",
+            "description": {
+              "content": "Returns full metadata about available options including dependencies, build tools, languages, Java versions, boot versions, and packaging types. The response format varies by Accept header.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.initializr.v2.2+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f6457bfc-ea73-4451-88ac-e2fe3064d6d0",
+              "name": "Initializr metadata",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "Use application/vnd.initializr.v2.2+json for structured metadata, or text/html to get the web UI",
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.initializr.v2.2+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.initializr.v2.2+json"
+                }
+              ],
+              "body": "{\n  \"dependencies\": {\n    \"type\": \"string\",\n    \"values\": [\n      {\n        \"name\": \"string\",\n        \"values\": [\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"groupId\": \"string\",\n            \"artifactId\": \"string\",\n            \"scope\": \"string\",\n            \"tags\": [\n              \"string\",\n              \"string\"\n            ]\n          },\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"groupId\": \"string\",\n            \"artifactId\": \"string\",\n            \"scope\": \"string\",\n            \"tags\": [\n              \"string\",\n              \"string\"\n            ]\n          }\n        ]\n      },\n      {\n        \"name\": \"string\",\n        \"values\": [\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"groupId\": \"string\",\n            \"artifactId\": \"string\",\n            \"scope\": \"string\",\n            \"tags\": [\n              \"string\",\n              \"string\"\n            ]\n          },\n          {\n            \"id\": \"string\",\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"groupId\": \"string\",\n            \"artifactId\": \"string\",\n            \"scope\": \"string\",\n            \"tags\": [\n              \"string\",\n              \"string\"\n            ]\n          }\n        ]\n      }\n    ]\n  },\n  \"type\": {},\n  \"language\": {},\n  \"bootVersion\": {},\n  \"packaging\": {},\n  \"javaVersion\": {},\n  \"groupId\": {},\n  \"artifactId\": {},\n  \"version\": {},\n  \"name\": {},\n  \"description\": {},\n  \"packageName\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "90f41274-fad0-4477-a0e0-24bdb4119ab9",
+          "name": "Get Available Dependencies",
+          "request": {
+            "name": "Get Available Dependencies",
+            "description": {
+              "content": "Returns a list of all available Spring Boot starters and dependencies",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "dependencies"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "bootVersion",
+                  "value": "<string>",
+                  "description": "Filter dependencies compatible with this Spring Boot version"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/vnd.initializr.v2.2+json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6023f3d1-8f66-495f-b894-52a20eb9b8b9",
+              "name": "Available dependencies",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "dependencies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "bootVersion",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/vnd.initializr.v2.2+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/vnd.initializr.v2.2+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"values\": [\n    {\n      \"name\": \"string\",\n      \"values\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"groupId\": \"string\",\n          \"artifactId\": \"string\",\n          \"scope\": \"string\",\n          \"tags\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"groupId\": \"string\",\n          \"artifactId\": \"string\",\n          \"scope\": \"string\",\n          \"tags\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ]\n    },\n    {\n      \"name\": \"string\",\n      \"values\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"groupId\": \"string\",\n          \"artifactId\": \"string\",\n          \"scope\": \"string\",\n          \"tags\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"groupId\": \"string\",\n          \"artifactId\": \"string\",\n          \"scope\": \"string\",\n          \"tags\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://start.spring.io",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "e321babe-fc76-4136-97e1-cc38ed29e44d",
+    "name": "Spring Initializr Generation Metadata API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Spring Initializr API provides programmatic access to project generation for Spring Boot applications. It exposes metadata about available dependencies, build systems, languages, and Java versions, as well as an endpoint to generate project archives (ZIP) with the selected configuration.\n\nContact Support:\n Name: Spring Team",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,367 @@
+{
+  "item": [
+    {
+      "id": "adefe548-88da-497f-b645-2ae766ca9843",
+      "name": "Generation",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "98643387-41d5-4978-8778-ebf891c28347",
+          "name": "Generate Project Archive",
+          "request": {
+            "name": "Generate Project Archive",
+            "description": {
+              "content": "Generates and downloads a Spring Boot project archive as a ZIP file with the specified configuration.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "starter.zip"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "maven-project",
+                  "description": "Build system type"
+                },
+                {
+                  "disabled": false,
+                  "key": "language",
+                  "value": "java"
+                },
+                {
+                  "disabled": false,
+                  "key": "bootVersion",
+                  "value": "<string>",
+                  "description": "Spring Boot version (e.g., 3.3.0)"
+                },
+                {
+                  "disabled": false,
+                  "key": "baseDir",
+                  "value": "demo",
+                  "description": "Base directory name within the ZIP"
+                },
+                {
+                  "disabled": false,
+                  "key": "groupId",
+                  "value": "com.example"
+                },
+                {
+                  "disabled": false,
+                  "key": "artifactId",
+                  "value": "demo"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "demo"
+                },
+                {
+                  "disabled": false,
+                  "key": "description",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "packageName",
+                  "value": "com.example.demo"
+                },
+                {
+                  "disabled": false,
+                  "key": "packaging",
+                  "value": "jar"
+                },
+                {
+                  "disabled": false,
+                  "key": "javaVersion",
+                  "value": "21"
+                },
+                {
+                  "disabled": false,
+                  "key": "dependencies",
+                  "value": "<string>",
+                  "description": "Comma-separated dependency IDs (e.g., web,data-jpa,security)"
+                },
+                {
+                  "disabled": false,
+                  "key": "dependencies",
+                  "value": "<string>",
+                  "description": "Comma-separated dependency IDs (e.g., web,data-jpa,security)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/zip"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8e9a7caf-81bb-48fb-81bd-3753cfecc1ba",
+              "name": "Project ZIP archive",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "starter.zip"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "type",
+                      "value": "maven-project"
+                    },
+                    {
+                      "key": "language",
+                      "value": "java"
+                    },
+                    {
+                      "key": "bootVersion",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "baseDir",
+                      "value": "demo"
+                    },
+                    {
+                      "key": "groupId",
+                      "value": "com.example"
+                    },
+                    {
+                      "key": "artifactId",
+                      "value": "demo"
+                    },
+                    {
+                      "key": "name",
+                      "value": "demo"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "packageName",
+                      "value": "com.example.demo"
+                    },
+                    {
+                      "key": "packaging",
+                      "value": "jar"
+                    },
+                    {
+                      "key": "javaVersion",
+                      "value": "21"
+                    },
+                    {
+                      "key": "dependencies",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dependencies",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/zip"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "attachment; filename=\"demo.zip\"",
+                  "key": "Content-Disposition",
+                  "value": "string"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/zip"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "375c184e-0421-4466-88d4-c79280ae8719",
+          "name": "Generate Project Archive (TGZ)",
+          "request": {
+            "name": "Generate Project Archive (TGZ)",
+            "description": {
+              "content": "Generates and downloads a Spring Boot project as a TGZ archive",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "starter.tgz"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "language",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "bootVersion",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "groupId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "artifactId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "dependencies",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "dependencies",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/x-compress"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a1202249-fcb5-4646-b053-1bd926f92821",
+              "name": "Project TGZ archive",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "starter.tgz"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "bootVersion",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "groupId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "artifactId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dependencies",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dependencies",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/x-compress"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/x-compress"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://start.spring.io",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "4f029fd4-7a72-4748-ab28-b3667866ad4a",
+    "name": "Spring Initializr Generation API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Spring Initializr API provides programmatic access to project generation for Spring Boot applications. It exposes metadata about available dependencies, build systems, languages, and Java versions, as well as an endpoint to generate project archives (ZIP) with the selected configuration.\n\nContact Support:\n Name: Spring Team",
+      "type": "text/plain"
+    }
+  }
+}
