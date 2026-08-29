@@ -7,6 +7,19 @@ description: >-
   business logic, without unnecessary ties to specific deployment environments. It includes modules for dependency
   injection, data access, web development, aspect-oriented programming, and more.
 type: Index
+deliveryModel:
+  model: self-hosted
+  license: Apache-2.0
+  open_source: true
+  commercial: false
+  callable_host: true
+  label: Self-hosted open source · you run it yourself
+  confidence: high
+  source:
+  - license
+  - openapi
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: unknown
@@ -149,6 +162,14 @@ apis:
   - type: API Endpoint
     url: https://start.spring.io/
 common:
+  - type: IssueTracker
+    url: https://github.com/spring-projects/spring-framework/issues
+  - type: SecurityPolicy
+    url: https://github.com/spring-projects/spring-framework/blob/main/SECURITY.md
+  - type: CodeOfConduct
+    url: https://github.com/spring-projects/.github/blob/main/CODE_OF_CONDUCT.md
+  - type: ContributionGuide
+    url: https://github.com/spring-projects/spring-framework/blob/main/CONTRIBUTING.md
   - type: License
     name: Apache-2.0
     url: https://github.com/spring-projects/spring-framework/blob/main/LICENSE
