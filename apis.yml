@@ -32,7 +32,7 @@ accessModel:
   - plans
   generated: '2026-07-22'
   method: derived
-image: https://spring.io/img/spring-logo.svg
+image: ''
 url: https://spring.io/projects/spring-framework
 created: '2024-01-01'
 modified: '2026-05-19'
